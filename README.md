@@ -46,7 +46,7 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
     Hal ini dilakukan ketika kamu tidak menggunakan php artisan migrate
     - Buat sebuah database baru di MySQL Anda.
     - Impor file `.sql` yang telah disediakan untuk membuat struktur tabel yang diperlukan (`users`, `topik`, `dataset`).
-    - **Unduh file SQL di sini**:  [sa](as)
+    - **Unduh file SQL di sini**:  [db_bentang.sql](https://github.com/abdullahalwafi/test-ben/blob/data/db_bentang.sql)
     - buka file .env dan sesuaikan konfigurasi databasenya
 
 
@@ -54,11 +54,10 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
     - Sesuaikan pengaturan koneksi database (nama database, user, password) pada file konfigurasi proyek PHP Anda (misalnya `.env`).
 
 4.  **Jalankan Aplikasi**
-    - Jalankan server pengembangan lokal Anda dengan mengakses url `http://127.0.0.1:8000`.
+    - Jalankan server pengembangan lokal Anda dengan mengakses url `[http://127.0.0.1:8000](http://127.0.0.1:8000)`.
     - login menggunakan akun dibawah ini
     - email : `admin@admin.com`
     - pass  : `12345678`
-    - jika ingin membuat dataset baru kamu bisa menggunakan data berikut : [databansos.xlsx](as)
 
 ---
 
@@ -79,7 +78,7 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
     - **Pilih Topik**: Pilih kategori topik yang sesuai untuk dataset Anda.
     - **Nama Dataset**: Masukkan nama untuk dataset yang akan diunggah.
     - **Upload File**: Unggah file Excel yang berisi data Anda.
-        - **Contoh file Excel dapat diunduh di sini**: [Link ke file Excel Anda]
+        - **Contoh file Excel dapat diunduh di sini**: databansos.xlsx](https://github.com/abdullahalwafi/test-ben/blob/data/Dataset%20BANSOS%20for%20UAS%20BI.xlsx)
     - **Meta Data Info**: Tambahkan informasi atau deskripsi tambahan mengenai dataset.
     - **Submit**: Klik tombol simpan. Data dari file Excel akan otomatis diubah menjadi format JSON dan disimpan di kolom `meta_data_json`.
 
