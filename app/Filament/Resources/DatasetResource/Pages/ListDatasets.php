@@ -9,7 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 class ListDatasets extends ListRecords
 {
     protected static string $resource = DatasetResource::class;
-
+    protected ?string $heading = 'Daftar Dataset';
     protected function getHeaderActions(): array
     {
         return [
