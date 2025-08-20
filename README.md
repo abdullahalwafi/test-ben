@@ -32,7 +32,7 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
 
 1.  **Clone Repositori**
     ```bash
-    git clone [https://github.com/abdullahalwafi/test-ben/](https://github.com/abdullahalwafi/test-ben/)
+    git clone https://github.com/abdullahalwafi/test-ben
     cd test-ben
     cp .env.example .env
     composer install
@@ -54,7 +54,7 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
     - Sesuaikan pengaturan koneksi database (nama database, user, password) pada file konfigurasi proyek PHP Anda (misalnya `.env`).
 
 4.  **Jalankan Aplikasi**
-    - Jalankan server pengembangan lokal Anda dengan mengakses url `[http://127.0.0.1:8000](http://127.0.0.1:8000)`.
+    - Jalankan server pengembangan lokal Anda dengan mengakses url [http://127.0.0.1:8000](http://127.0.0.1:8000).
     - login menggunakan akun dibawah ini
     - email : `admin@admin.com`
     - pass  : `12345678`
@@ -78,7 +78,7 @@ Untuk menjalankan aplikasi ini di lingkungan lokal Anda, ikuti langkah-langkah b
     - **Pilih Topik**: Pilih kategori topik yang sesuai untuk dataset Anda.
     - **Nama Dataset**: Masukkan nama untuk dataset yang akan diunggah.
     - **Upload File**: Unggah file Excel yang berisi data Anda.
-        - **Contoh file Excel dapat diunduh di sini**: databansos.xlsx](https://github.com/abdullahalwafi/test-ben/blob/data/Dataset%20BANSOS%20for%20UAS%20BI.xlsx)
+        - **Contoh file Excel dapat diunduh di sini**: [databansos.xlsx](https://github.com/abdullahalwafi/test-ben/blob/data/Dataset%20BANSOS%20for%20UAS%20BI.xlsx)
     - **Meta Data Info**: Tambahkan informasi atau deskripsi tambahan mengenai dataset.
     - **Submit**: Klik tombol simpan. Data dari file Excel akan otomatis diubah menjadi format JSON dan disimpan di kolom `meta_data_json`.
 
