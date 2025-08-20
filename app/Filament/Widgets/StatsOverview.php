@@ -11,16 +11,34 @@ class StatsOverview extends BaseWidget
 {
     protected function getStats(): array
     {
-        $total = Dataset::count();
-        $byTopik = Topik::withCount('datasets')->orderByDesc('datasets_count')->get();
+        $totalDataset = \App\Models\Dataset::count();
+        $totalTopik   = \App\Models\Topik::count();
+        $lastUpdate   = optional(\App\Models\Dataset::max('updated_at'))->diffForHumans() ?? '-';
 
-        $top3 = $byTopik->take(3)->map(fn($t) => "{$t->topik}: {$t->datasets_count}")->implode(' | ');
+        $latest = \App\Models\Dataset::latest()->first();
+
         return [
-            Stat::make('Total Dataset', (string)$total)
-                ->description($top3 ?: 'Belum ada data'),
-            Stat::make('Total Topik', (string)Topik::count())
-                ->description('Distinct kategori/topik'),
-            Stat::make('Update Terakhir', optional(Dataset::max('updated_at'))->diffForHumans() ?? '-'),
+            Stat::make('Total Dataset', (string)$totalDataset)
+                ->description("Total semua dataset")
+                ->color('success'),
+
+            Stat::make('Total Topik', (string)$totalTopik)
+                ->description('Jumlah kategori/topik unik')
+                ->color('info'),
+
+            Stat::make('Update Terakhir', $lastUpdate)
+                ->description($latest?->nama_dataset ?? 'Belum ada dataset')
+                ->color('warning'),
+
+            Stat::make('Dataset Terbaru', $latest?->nama_dataset ?? '-')
+                ->description($latest?->created_at->diffForHumans() ?? '-')
+                ->color('primary'),
+
+            Stat::make(
+                'Topik Paling Banyak Dataset',
+                \App\Models\Topik::withCount('datasets')->orderByDesc('datasets_count')->first()?->topik ?? '-'
+            )->description('Topik dengan dataset terbanyak')
+                ->color('danger'),
         ];
     }
 }
